@@ -1,0 +1,12 @@
+
+{% extends '/publicbase.html' %}
+{% block content %}
+   <br><br>
+    <div class="container2">
+      <a href ={{ url_for('showitems' , game_id = items.game_id )}} > <-- Back </a>
+      <h2>Item</h2>
+      <p>{{items.name}}</p>
+      <h2>Items Description</h2>
+      <p>{{ items.description }}</p>    
+    </div>
+    {% endblock %}

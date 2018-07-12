@@ -1,0 +1,16 @@
+
+{% extends "/base.html" %}
+{% block content %}
+<div class = "container1">
+  <a href ={{ url_for('catalog')}} > <-- Back </a>
+    <h2>Categories</h2>
+      <p>{{game.name}}</p>
+</div>
+<div class="container2">
+  <h2>Items</h2>
+  {%for i in items%}
+  <ul><a href={{ url_for('item_description', game_id = i.game_id , item_id = i.ids) }}>{{i.name}}</a></ul>
+  {% endfor %}
+  <a href = {{url_for('additems' , game_id = game.ids)}}>Add new Item</a>
+</div>
+{% endblock %}

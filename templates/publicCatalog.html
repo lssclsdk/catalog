@@ -1,0 +1,18 @@
+
+{% extends '/base.html' %}
+{% block content %}
+<div class = "container1">
+  <h2>Categories</h2>
+  {%for i in games%}
+  <ul><a href="{{url_for('showitems', game_id = i.ids)}}">{{i.name}}</a></ul>
+  {%endfor%}
+  <br>
+
+</div>
+<div class="container2">
+  <h2>Latest Items</h2>
+  {%for i in items%}
+  <ul>{{i.name}} ({% for j in games %} {% if j.ids == i.game_id %} {{j.name}} {% endif%} {% endfor %})</ul>
+  {%endfor%}
+</div>
+{% endblock %}
